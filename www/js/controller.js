@@ -3,7 +3,7 @@ angular.module('starter', ['ionic'])
         $scope.state = "unknown";
 
 $scope.isMultiWindow = function() {
-     window.IsMultiWindowPlugin.get(function (state) {
+     window.MultiWindowPlugin.get(function (state) {
              $timeout (function() {$scope.state = state});
     },
     function (err) {
