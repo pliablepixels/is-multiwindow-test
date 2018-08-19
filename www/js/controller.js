@@ -8,7 +8,7 @@ $scope.isMultiWindow = function() {
     },
     function (err) {
         console.log (" *************** ERR:"+JSON.stringify(err));
-        $scope.state = "error:"+JSON.stringify(err);
+        $timeout (function() {$scope.state = "error:"+JSON.stringify(err);});
     });
 }
 
