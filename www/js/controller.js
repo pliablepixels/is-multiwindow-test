@@ -8,6 +8,15 @@ angular.module('starter', ['ionic'])
             window.MultiWindowPlugin.registerOnStop(onStop);
             window.MultiWindowPlugin.registerOnStart(onStart);
         });
+        $scope.isMultiWindow = function() {
+          window.MultiWindowPlugin.get(function (state) {
+             $timeout (function() {$scope.state = state});
+          },
+          function (err) {
+             console.log (" *************** ERR:"+JSON.stringify(err));
+             $timeout (function() {$scope.state = "error:"+JSON.stringify(err);});
+          });
+        }
 
         $scope.isMultiWindow = function() {
              window.MultiWindowPlugin.get(function (data) {
