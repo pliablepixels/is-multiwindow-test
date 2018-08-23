@@ -6,8 +6,8 @@ angular.module('starter', ['ionic'])
 
         $ionicPlatform.ready (function () {
             console.log ("Registering callbacks...");
-            window.MultiWindowPlugin.registerOnStop(onStop);
-            window.MultiWindowPlugin.registerOnStart(onStart);
+            window.MultiWindowPlugin.registerOnStop("stophandle", onStop);
+            window.MultiWindowPlugin.registerOnStart("starthandle", onStart);
         });
 
         $scope.isMultiWindow = function() {
